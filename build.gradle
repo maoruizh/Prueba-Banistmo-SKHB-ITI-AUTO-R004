@@ -1,0 +1,66 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+plugins {
+    id 'io.github.jumosqu12.screenplayarchitecture' version '1.0.0'
+    id "net.serenity-bdd.serenity-gradle-plugin" version "4.0.12"
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+}
+
+sourceCompatibility = 11
+
+repositories {
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+    mavenLocal()
+    mavenCentral()
+}
+
+ext {
+    serenityCoreVersion = '4.0.12'
+    lombokVersion = '1.18.22'
+}
+
+dependencies {
+
+    implementation 'com.codoid.products:fillo:1.21'
+    implementation 'com.hynnet:jacob:1.18'
+    implementation 'net.sf.jt400:jt400-full:6.0'
+    implementation 'org.jvnet.com4j:com4j:2.1'
+    implementation 'org.slf4j:slf4j-simple:2.0.5'
+
+    implementation "net.serenity-bdd:serenity-junit:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
+    implementation 'org.json:json:20230618'
+    implementation group: 'jline', name: 'jline', version: '2.14.6'
+
+    implementation ('org.apache.camel:camel-spring-boot-starter:2.25.4'){
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-core'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-api'
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+        exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
+    }
+
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.7'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.20.0'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.20.0'
+
+    testImplementation 'org.assertj:assertj-core:3.23.1'
+    testImplementation 'org.hamcrest:hamcrest-core:2.2'
+    testImplementation "junit:junit:4.13.2"
+}
+gradle.startParameter.continueOnFailure = true
