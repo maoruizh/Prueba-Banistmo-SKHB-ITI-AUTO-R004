@@ -1,6 +1,5 @@
 package co.com.bancolombia.certification.prueba.interactions;
 
-import lombok.AllArgsConstructor;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.Performable;

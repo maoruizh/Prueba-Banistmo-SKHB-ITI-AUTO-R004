@@ -16,36 +16,14 @@ public class ClickReporteOPEPTasks implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        for (int i = 0; i < 14; i++) {
+            actor.attemptsTo(
+                    Scroll.to(BTN_MAS_PUBLICACIONES),
+                    Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled()
+            );
+        }
         actor.attemptsTo(
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-                Scroll.to(BTN_MAS_PUBLICACIONES),
-                Click.on(BTN_MAS_PUBLICACIONES).afterWaitingUntilEnabled(),
-
                 Click.on(BTN_REPORTE_OPEP).afterWaitingUntilEnabled()
         );
     }
 }
-
